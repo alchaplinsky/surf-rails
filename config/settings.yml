@@ -1,0 +1,12 @@
+carrierwave:
+  storage: :file
+
+desktop_client_id: SURFDESKTOPoVpq1CQFu0BZdklt229ywyFfd4VDYycgJaPzDQjaNE
+
+plans:
+  free:
+    price: 0
+    interests_limit: 10
+  premium:
+    price: 36.00
+    interests_limit: 1000

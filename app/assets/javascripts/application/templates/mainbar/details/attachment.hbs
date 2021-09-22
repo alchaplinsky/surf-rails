@@ -1,0 +1,14 @@
+<div class="field">
+  <label for="title">
+    Title
+    <span class="error-message"></span>
+  </label>
+  <input type="text" name="title" class="js-input" value="{{attachment.title}}" {{#if readonly}}readonly{{/if}} />
+</div>
+<div class="field">
+  <a href="{{attachment.ur}}">{{attachment.url}}</a>
+</div>
+<div class="field footer">
+  <div class="js-suggestions"></div>
+  <input type="text" name="tag_list" placeholder="Enter hashtags starting with #" class="hashtags js-input js-hashtagable" value="{{tags}}" {{#if readonly}}readonly{{/if}} />
+</div>

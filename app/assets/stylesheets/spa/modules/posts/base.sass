@@ -1,0 +1,135 @@
+.posts
+  height: 100%
+  position: relative
+
+.post
+  position: relative
+  border-bottom: 1px solid #eee
+  padding: 10px 15px 10px 15px
+  transition: background .2s ease
+  cursor: default
+  outline: none
+  .authorship
+    font-size: 12px
+    line-height: 18px
+    margin-bottom: 6px
+    .avatar
+      width: 18px
+      height: 18px
+      border-radius: 50%
+      margin-right: 7px
+    .name
+      font-weight: 400
+      margin-right: 7px
+    .date
+      color: #a8a8a8
+  .title
+    font-weight: 400
+    font-size: 15px
+    margin-bottom: 5px
+    height: 17px
+    overflow: hidden
+    color: #555
+    text-overflow: ellipsis
+    &:empty
+      height: 0
+      margin: 0
+  .description
+    font-weight: 300
+    line-height: 1.4em
+    max-height: 38px
+    overflow: hidden
+    text-overflow: ellipsis
+    p
+      margin: 0
+  .message
+    margin-bottom: 10px
+    &:empty
+      margin: 0
+  .tags
+    margin-top: 5px
+  .tag
+    color: #157ce3
+    font-weight: 300
+    cursor: pointer
+  &.raw
+    position: relative
+    overflow: hidden
+    .spinner
+      top: -62px
+      right: 20px
+      position: absolute
+  &.failed
+    position: relative
+    background: rgba(207, 34, 39, .05)
+    &:hover
+      background: rgba(207, 34, 39, .05)
+    .status
+      position: absolute
+      right: 15px
+      top: 10px
+      color: rgba(207, 34, 39, .4)
+      .retry
+        color: #aaa
+        cursor: pointer
+        &:hover
+          text-decoration: underline
+  &:hover
+    transition: background .2s ease
+    background: #f7faff
+  &.current, &.current:hover
+    box-shadow: inset -3px 0px 0 #03a9f4
+    background: #fff
+.posts.grid
+  padding: 5px
+  height: calc(100% - 10px)
+  display: flex
+  flex-flow: row wrap
+  align-content: flex-start
+  .post
+    margin: 5px
+    padding: 0px
+    width: calc(20% - 10px)
+    border: 1px solid #eee
+    box-sizing: border-box
+    height: 205px
+    background: #fff
+    .mainbar.split &
+      width: calc(50% - 10px)
+    .message
+      display: none
+    &:hover
+      background: #f7faff
+    &.current, &.current:hover
+      box-shadow: none
+    .tags
+      display: none
+    .title
+      font-size: 13px
+      line-height: 17px
+      height: 34px
+      padding: 0 10px
+    .authorship
+      position: absolute
+      bottom: 0px
+      right: 0px
+      .avatar
+        width: 20px
+        height: 20px
+      .name, .date
+        display: none
+    .domain
+      padding: 0 10px
+      position: static
+
+@media (max-width: 1430px)
+  .posts.grid .post
+    width: calc(25% - 10px)
+
+@media (max-width: 1100px)
+  .posts.grid .post
+    width: calc(33.3333% - 10px)
+
+@media (max-width: 800px)
+  .posts.grid .post
+    width: calc(50% - 10px)

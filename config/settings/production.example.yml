@@ -1,0 +1,46 @@
+facebook:
+  app_id:
+  secret_key:
+
+google:
+  client_id:
+  client_secret:
+
+carrierwave:
+  asset_host: https://surfapp.io
+
+default_avatar: https://surfapp.io/images/avatar.png
+
+desktop:
+  mac:
+    version: 0.6.5
+    installer_url: https://github.com/surfapp/mac/releases/download/v0.6.5/Surf-0.6.5.dmg
+    update_url: https://github.com/surfapp/mac/releases/download/v0.6.5/Surf-0.6.5-mac.zip
+  windows:
+    version: 0.5.1
+    installer_url: https://www.dropbox.com/s/epzo4bd6f1oifiy/Surf%200.5.1.exe?dl=1
+    update_url: ''
+
+paypal:
+  client_id:
+  client_secret:
+
+desktop_test:
+  mac:
+    version: 0.3.5
+    installer_url: https://www.dropbox.com/s/l96k0s3g0sfwghg/Surf-0.3.5.dmg?dl=1
+    update_url: https://www.dropbox.com/s/meoe20zjqyq93jz/Surf-0.3.5.zip?dl=1
+  windows:
+    version: 0.0.0
+    installer_url:
+    update_url:
+
+metrika: true
+analytics: true
+
+smtp:
+  address:
+  domain:
+  username:
+  password:
+  port: 2525

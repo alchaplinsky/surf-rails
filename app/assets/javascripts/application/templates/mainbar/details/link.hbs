@@ -1,0 +1,20 @@
+<br />
+<div class="field by-center">
+  <img src="{{link.image}}" height="100"/>
+</div>
+<div class="field">
+  <label for="">Title</label>
+  <input type="text" name="title" class="js-input" value="{{link.title}}" {{#if readonly}}readonly{{/if}} />
+</div>
+<div class="field">
+  <label for="">Description</label>
+  <textarea name="description" class="js-input" rows="4" {{#if readonly}}readonly{{/if}}>{{link.description}}</textarea>
+</div>
+<div class="field">
+  <label for="">URL</label>
+  <a href="{{link.url}}">{{link.url}}</a>
+</div>
+<div class="field footer">
+  <div class="js-suggestions"></div>
+  <input type="text" name="tag_list" placeholder="Enter hashtags starting with #" class="hashtags js-input js-hashtagable" value="{{tags}}" {{#if readonly}}readonly{{/if}}/>
+</div>

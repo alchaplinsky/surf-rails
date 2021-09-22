@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      * { font-family: "Proxima Nova", "proxima-nova", Helvetica, Arial sans-serif }
+      body {
+        -webkit-font-smoothing:antialiased;
+        -webkit-text-size-adjust:none;
+        width: 100%!important;
+        height: 100%;
+      }
+      body {
+        font-family: Arial;
+        color: #666a7a;
+      }
+      p {
+        line-height: 1.5em;
+        margin-bottom: 10px;
+      }
+      a {
+        color: #4d9bd7;
+        text-decoration: none;
+      }
+      h1 {
+        font-size: 16px;
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body style="background: #f8f8f8">
+    <div style="width: 80%; max-width: 600px; margin: 0 auto;">
+      <div style="text-align: center; padding: 20px;">
+        <%= image_tag attachments['icon.png'].url, size: '64x64' %>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>

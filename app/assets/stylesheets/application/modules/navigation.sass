@@ -1,0 +1,43 @@
+.navigation
+  float: right
+  list-style: none
+  margin: 7px 0 0 0
+  padding: 0
+  li
+    display: inline-block
+    a
+      position: relative
+      text-transform: uppercase
+      font-size: 15px
+      padding: 15px
+      color: #2A88DD
+      text-decoration: none
+      outline: none
+      &::before, &::after
+        content: ''
+        position: absolute
+        height: 8px
+        width: 13px
+      &::before
+        border-left: 1px solid transparent
+        border-top: 1px solid transparent
+        left: 8px
+        top: 12px
+      &::after
+        border-right: 1px solid transparent
+        border-bottom: 1px solid transparent
+        right: 8px
+        bottom: 12px
+      &:hover
+        color: #ffcf33
+      &.current
+        color: #ffcf33
+        &:before, &:after
+          border-color: #ffcf33
+      .is-sticky &
+        color: rgba(55,55,55,.8)
+  @media(max-width: 580px)
+    li
+      display: none
+      &:last-child
+        display: block

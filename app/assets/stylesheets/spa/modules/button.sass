@@ -1,0 +1,37 @@
+.button
+  display: inline-block
+  background: #178afc
+  color: #fff
+  font-size: 16px
+  padding: 12px 20px
+  border-radius: 3px
+  border: 1px solid #178afc
+  cursor: pointer
+  min-width: 100px
+  outline: none
+  .label
+    line-height: 1.4em
+  .loader
+    position: relative
+    top: 2px
+    display: none
+    margin: 0 auto
+    > div
+      background: #fff
+  &:hover
+    background: #147ce3
+  &.pale
+    background: #d9d9d9
+    border: 1px solid #d1d1d1
+    color: #777
+    &:hover
+      background: #d1d1d1
+  &.disabled
+    background: #ccc
+    border-color: #ccc
+    cursor: default
+  &.loading
+    .loader
+      display: block
+    .label
+      display: none

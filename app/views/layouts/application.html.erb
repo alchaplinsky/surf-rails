@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags default_meta_tags %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag "favicon@2x.png", type: "image/png", rel: "icon", sizes: '32x32' %>
+    <%= favicon_link_tag "favicon@1x.png", type: "image/png", rel: "icon", sizes: '16x16' %>
+    <%= action_cable_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  </head>
+  <body class="shaded">
+    <div class="wrapper">
+      <% if notice %>
+      <div class="notice"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert"><%= alert %></div>
+      <% end %>
+      <div class="header">
+        <div class="container">
+          <%= link_to image_tag('logo.png', height: 24, class: 'logo'), dashboard_path%>
+          <% if current_user %>
+            <div class="account">
+              <div class="left">
+                <% if current_user.avatar.present? %>
+                  <%= image_tag current_user.avatar.url, size: 32%>
+                <% else %>
+                <div class="letter"><%= current_user.first_name.first%></div>
+                <% end %>
+              </div>
+              <div class="info">
+                <div>
+                  <%= current_user.full_name %>
+                </div>
+                <div>
+                  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="links">
+              <%= link_to 'Login', new_user_session_path, class: 'mrm' %>
+              <%= link_to 'Sign up', new_user_registration_path %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+    <%= render partial: 'metrika' if Settings.metrika %>
+  </body>
+</html>

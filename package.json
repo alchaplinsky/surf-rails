@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "^4.0.2",
+    "autosize": "^4.0.0",
+    "backbone": "^1.3.3",
+    "backbone.marionette": "^3.4.3",
+    "clipboard": "^1.7.1",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "1.12.7",
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.7.1",
+    "jquery": "^3.2.1",
+    "medium-editor": "^5.23.2",
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.3.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.3",
+    "webpack-dev-server": "^3.3.1"
+  }
+}

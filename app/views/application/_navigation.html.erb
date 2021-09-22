@@ -1,0 +1,10 @@
+<ul class="navigation">
+  <li><a href="/" class="<%= 'current' if request.path =='/' %>">Home</a></li>
+  <li><a href="/download" data-action="scroll" class="<%= 'current' if request.path =='/download' %>">Download</a></li>
+  <% if current_user %>
+    <li><%= link_to 'Dashboard', dashboard_path %></li>
+  <% else %>
+    <li><%= link_to 'Login', new_user_session_path, class: request.path =='/login' ? 'current' : '' %></li>
+    <li><%= link_to 'Sign up', new_user_registration_path, class: request.path =='/signup' ? 'current' : '' %></li>
+  <% end %>
+</ul>

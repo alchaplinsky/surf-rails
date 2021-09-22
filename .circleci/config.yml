@@ -1,0 +1,79 @@
+version: 2
+jobs:
+  build_and_test:
+    working_directory: ~/surf
+    docker:
+      - image: circleci/ruby:2.4.1-node-browsers
+        environment:
+          RAILS_ENV: test
+
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: surf_test
+          POSTGRES_PASSWORD: ""
+
+    steps:
+      # System Dependencies
+      - run:
+          name: Install System Dependencies
+          command: sudo apt-get update; sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+
+      # Code Checkout
+      - restore_cache:
+          keys:
+            - v1-surf-git
+
+      - checkout
+
+      - save_cache:
+          paths:
+            - .git
+          key: v1-surf-git
+
+      # Install Node Modules
+      - restore_cache:
+          keys:
+            - 'surf-yarn-{{ checksum  "yarn.lock" }}'
+
+      - run:
+          name: Install Node Modules
+          command: yarn install
+
+      - save_cache:
+          key: 'surf-yarn-{{ checksum  "yarn.lock" }}'
+          paths:
+            - node_modules
+
+      # Install Ruby Dependencies
+      - restore_cache:
+          keys:
+            - 'surf-gems-{{ checksum  "Gemfile.lock" }}'
+
+      - run:
+          name: Install Ruby Dependencies
+          command: bundle install --path=vendor/bundle
+
+      - save_cache:
+          key: 'surf-gems-{{ checksum  "Gemfile.lock" }}'
+          paths:
+            - vendor/bundle
+
+      # Database
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database Setup
+          command: |
+            cp config/database.sample.yml config/database.yml; bundle exec rake db:create db:schema:load --trace
+
+      # Run tests
+      - run:
+          name: Run Rspec
+          command: bundle exec rspec --color --require spec_helper spec --format progress
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build_and_test

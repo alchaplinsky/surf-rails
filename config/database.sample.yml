@@ -1,0 +1,19 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: surf_development
+  pool: 5
+  username:
+  password:
+
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: surf_test
+  pool: 5
+  username: circleci
+  password:

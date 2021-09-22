@@ -1,0 +1,29 @@
+facebook:
+  app_id: 525628620929276
+  secret_key: 16ca1995f05399d77d8746b6599e9a6f
+
+google:
+  client_id: 222222222222
+  clietn_secret: 222222222222
+
+carrierwave:
+  asset_host: http://127.0.0.1
+
+default_avatar: http://http://127.0.0.1/images/avatar.png
+
+desktop:
+  mac:
+    version: 0.1.0
+    installer_url: https:/surfapp.io/download/mac/Surf-0.1.0.dmg
+    update_url: https:/surfapp.io/download/mac/Surf-0.1.0.zip
+  windows:
+    version: 0.1.0
+    installer_url: https:/surfapp.io/download/windows/Surf-0.1.0.exe
+    update_url: https:/surfapp.io/download/windows/Surf-0.1.0.zip
+
+paypal:
+  client_id: PAYPAL-CLIENT-ID
+  client_secret: PAYPAL-CLIENT-SECRET
+
+metrika: false
+analytics: false

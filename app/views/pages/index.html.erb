@@ -1,0 +1,39 @@
+<div class="row focus">
+  <div class="macbook">
+    <%= image_tag 'mac_app_2x.png' %>
+  </div>
+  <div class="col2of5 right plm">
+    <h1>Content Organizer</h1>
+    <div class="about mbl">
+      Organize your ideas &amp; inspirations
+      <ul>
+        <li>Save anything from the web</li>
+        <li>Write your ideas down</li>
+        <li>Organize content by interests</li>
+        <li>Find easily and fast</li>
+      </ul>
+    </div>
+    <div class="muted mbm">
+      <% if @download[:platform] == :mac %>
+        Available for MacOS 10.8+
+      <% elsif @download[:platform] == :windows %>
+        Available for Windows 7+ (portable)
+      <% else %>
+        Not Available for your OS
+      <% end %>
+    </div>
+    <div>
+      <% if @download[:supported] %>
+        <div class="mbs">
+          <a href="<%= @download[:installer] %>" class="download-button hvr-float-shadow">
+            Free Download
+          </a>
+          <a href="<%= new_user_registration_path %>" class="button hollow hvr-float-shadow mls">
+            Join Surf Now
+          </a>
+        </div>
+        <small class="muted">Version: <%= @download[:version] %></small>
+      <% end %>
+    </div>
+  </div>
+</div>

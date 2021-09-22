@@ -1,0 +1,32 @@
+<div class="footer">
+  <div class="container row">
+    <div class="col1of4">
+      <div class="mbm"><%= image_tag 'logo_footer.png', width: 88%></div>
+      © <%= Time.now.year %> SurfApp. All Rights Reserved.
+    </div>
+    <div class="col1of4">
+      <div><a href="/features"><span class="ampersand">&amp;</span> Features</a></div>
+      <div><a href="/download"><span class="ampersand">&amp;</span> Download</a></div>
+      <div>
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+          <span class="ampersand">&amp;</span> Login
+        <%end%>
+      </div>
+      <div>
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+          <span class="ampersand">&amp;</span> Sign up
+        <%end%>
+      </div>
+    </div>
+    <div class="col1of4">
+      <div><a href="/feedback"><span class="ampersand">&amp;</span> Feedback</a></div>
+      <div><a href="/terms"><span class="ampersand">&amp;</span> Terms of service</a></div>
+      <div><a href="/privacy"><span class="ampersand">&amp;</span> Privacy policy</a></div>
+    </div>
+    <div class="col1of4">
+      <i class="icon-twitter"></i>
+      <div>Fresh updates and news</div>
+      <div>follow <a href="https://twitter.com/SurfAppIO" target="_blank">@SurfAppIO</a></div>
+    </div>
+  </div>
+</div>

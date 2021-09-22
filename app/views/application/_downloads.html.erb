@@ -1,0 +1,34 @@
+<div class="section">
+  <div class="container row">
+    <div class="col1of3 by-center">
+      <div class="icon-apple logo"></div>
+      <h3 class="mbm">Mac OS</h3>
+      <div>
+        <a href="<%= @download[:platforms][:mac][:installer] %>">
+          Download for Mac 10.8+
+        </a>
+      </div>
+      <small class="pale">Current version: v<%= @download[:platforms][:mac][:version] %></small>
+    </div>
+
+    <div class="col1of3 by-center">
+      <div class="icon-windows logo"></div>
+      <h3 class="mbm">Windows</h3>
+      <div>
+        <a href="<%= @download[:platforms][:windows][:installer] %>">
+          Download for Windows 7+ (portable)
+        </a>
+      </div>
+      <small class="pale">Current version: v<%= @download[:platforms][:windows][:version] %></small>
+    </div>
+
+    <div class="col1of3 by-center">
+      <div class="icon-chrome logo"></div>
+      <h3 class="mbm">Chrome Extension</h3>
+      <a href="https://chrome.google.com/webstore/detail/surf/poepphjbhofpmdfkcjhhlocidhhmiega" target="_blank">
+        Download Surf for Chrome
+      </a>
+    </div>
+  </div>
+  <br /><br /><br />
+</div>

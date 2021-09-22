@@ -1,0 +1,107 @@
+.header
+  position: relative
+  box-sizing: border-box
+  padding: 7px 15px
+  box-shadow: inset 0 -.5px 0 rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,0.1)
+  user-select: none
+  -webkit-user-select: none
+  .column
+    box-sizing: border-box
+    display: inline-block
+  .column:first-child
+    width: 60%
+  .column:last-child
+    margin-left: -5px
+    width: 40%
+  .specifics
+    display: inline-block
+  .toggler
+    display: none
+  a
+    color: #a8a8a8
+    transition: color .2s ease
+    &:hover
+      color: #333
+    &.current
+      color: #3380b5
+  .divider
+    position: relative
+    top: -1px
+    color: #aaa
+    font-size: 10px
+    margin: 0 5px
+  .icon-settings, .icon-user-outline
+    position: relative
+    top: 1px
+    margin-left: 3px
+    cursor: pointer
+    color: #a8a8a8
+    transition: color .2s ease
+    &:hover
+      color: #8c8c8c
+  .last-col
+    position: relative
+  .toggle
+    position: absolute
+    right: 0
+    top: 20px
+    right: 15px
+    font-size: 18px
+    cursor: pointer
+    color: #a8a8a8
+    transition: color .2s ease
+    &:hover
+      color: #8c8c8c
+
+@media (max-width: 768px)
+  .header .column:last-child
+    display: none
+  .header
+    padding: 10px 50px 10px 50px
+    background: #f8f8f8
+    .column:nth-child(1)
+      width: 100%
+      text-align: center
+    .specifics
+      display: block
+    .icon-settings, .icon-user-outline
+      position: absolute
+      right: 5px
+      top: 6px
+      padding: 5px
+      font-size: 24px
+    .toggle
+      display: none
+    .toggler
+      display: block
+      position: absolute
+      left: 4px
+      top: 2px
+    .context
+      right: -20px
+      top: 20px
+      text-align: left
+    .search
+      display: none
+    .filters
+      display: none
+
+.subheader
+  background: #fff
+  padding: 10px 15px
+  box-shadow: inset 0 -.5px 0 rgba(0,0,0,.1)
+  .subheader-content
+    max-height: 18px
+    overflow: hidden
+  .tag
+    margin-right: 5px
+    cursor: pointer
+    color: #a8a8a8
+    transition: color .2s ease
+    &:hover, &.active
+      color: #157ce3
+@media (max-width: 768px)
+  .subheader
+    height: 0
+    padding: 0
+    overflow: hidden

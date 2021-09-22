@@ -1,0 +1,36 @@
+<div class="subheader">
+  <div class="container by-center">
+    <span class="key-label">
+      Your API key
+    </span>
+    <div class="copy-field">
+      <%= current_user.api_token%>
+    </div>
+  </div>
+</div>
+<div class="account-form">
+   <%= form_for @user do |f|%>
+     <div class="avatar">
+       <%= image_tag @user.avatar.url, size: '100x100' %>
+      </div>
+    <div class="field">
+      <label for="">First Name</label>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <label for="">Last Name</label>
+      <%= f.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <label for="">Email</label>
+      <%= f.text_field :email, disabled: :disabled %>
+    </div>
+
+    <div class="field">
+      <div class="muted">Connected with <%= @user.provider.capitalize %></div>
+    </div>
+    <%= f.submit 'Save', class: 'button' %>
+  <% end %>
+</div>

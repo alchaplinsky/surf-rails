@@ -1,0 +1,29 @@
+<div class="upgrade row">
+  <div class="col1of2">
+    <h1 class="mbm">Surf Premium</h1>
+    <h3>Billed now: $36</h3>
+    <div class="mbm">
+      <small class="muted">One time payment - lifetime usage!</small>
+    </div>
+    <ul class="featurelist">
+      <li>Unlimited interests</li>
+      <li>Unlimited collaborators</li>
+      <li>Hashtags, Labels, filters</li>
+      <li>Premium themes, and more</li>
+    </ul>
+  </div>
+  <div class="col1of2">
+    <div class="payment">
+      <%= image_tag 'paypal.png', class: "mbm" %>
+      <p class="muted mbl">One time payment of <strong>$36</strong> and you get Surf Premium forever.</p>
+      <% if current_user && current_user.premium? %>
+        <h3>Thanks for purchase!</h3>
+        <div class="muted">You are now enjoying premium features</div>
+      <% else %>
+        <div id="payment-button"></div>
+        <div id="payment-loading"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=<%= Settings.paypal.client_id %>"></script>

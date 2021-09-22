@@ -1,0 +1,34 @@
+.context-holder
+  position: relative
+.context
+  position: absolute
+  z-index: 11
+  display: none
+  list-style: none
+  right: -180px
+  margin: 0
+  padding: 0
+  background: #fff
+  box-shadow: 0 0 10px rgba(100,100,100,.3)
+  min-width: 200px
+  border: 1px solid #d9d9d9
+  border-radius: 5px
+  li
+    padding: 10px 20px
+    color: #3c3c3c
+    border-bottom: 1px solid #ddd
+    cursor: pointer
+    &:first-child
+      border-radius: 5px 5px 0 0
+    &:last-child
+      border-radius: 0 0 5px 5px
+      border: none
+    &:hover
+      background: #f3f3f3
+    &.disabled
+      color: #bbb
+      cursor: default
+      &:hover
+        background: #fff
+  &.shown
+    display: block

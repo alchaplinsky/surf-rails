@@ -1,0 +1,39 @@
+.post.image
+  .picture
+    position: relative
+    display: inline-block
+    img
+      display: block
+    a
+      display: block
+      &:before
+        opacity: 0
+        display: block
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,.1)
+        transition: opacity .4s ease
+    .icon-open
+      opacity: 0
+      position: absolute
+      font-size: 36px
+      color: rgba(255,255,255,.8)
+      top: 50%
+      left: 50%
+      margin: -18px 0 0 -18px
+      transition: opacity .4s ease
+    &:hover
+      .icon-open, a:before
+        opacity: 1
+  .posts.grid &
+    .title
+      display: none
+    .picture
+      height: 203px
+      overflow: hidden
+      img
+        max-width: 100%

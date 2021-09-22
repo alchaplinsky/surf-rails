@@ -1,0 +1,26 @@
+.navbar
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10
+  width: 100%
+  padding: 10px 0
+  background: transparent
+  transition: background .3s ease
+  .logo
+    display: none
+    position: relative
+    top: 7px
+    &.inverse
+      display: inline
+  &.is-sticky
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
+    background: #fff
+    .logo
+      display: inline
+      &.inverse
+        display: none
+    .navigation-toggle
+      background: #03A9F4
+      &:before, &:after
+        background: #03A9F4

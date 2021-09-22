@@ -1,0 +1,23 @@
+<div class="container by-center pvl">
+  <br />
+  <%= image_tag @user.avatar.url, size: 50 %>
+  <div>
+    Hello, <strong><%= @user.full_name %>!</strong>
+  </div>
+  <br />
+  <br />
+  <%= form_for @user do |f|%>
+    <%= f.hidden_field :provider, value: @user.provider %>
+    <%= f.hidden_field :uid, value: @user.uid %>
+    <%= f.hidden_field :first_name, value: @user.first_name %>
+    <%= f.hidden_field :last_name, value: @user.last_name %>
+    <%= f.hidden_field :remote_avatar_url, value: @service.avatar_url %>
+    <div class="mbs">
+      <%= f.text_field :email, placeholder: 'Your email' %>
+    </div>
+    <div class="field-error-message mbl">
+      <%= @user.errors.full_messages.first %>
+    </div>
+    <%= f.submit 'Create Account', class: 'button'%>
+  <%end%>
+</div>

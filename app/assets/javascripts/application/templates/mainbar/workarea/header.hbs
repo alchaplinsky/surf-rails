@@ -1,0 +1,76 @@
+<div class="column">
+  <div class="toggler js-sidebar-toggler">
+    <img src="{{icon}}" alt="" width="40" height="40">
+  </div>
+  <div class="specifics">
+    <div class="context-holder">
+      <ul class="context js-context">
+        {{#if isInterestOwner}}
+          <li class="js-edit">Edit Interest</li>
+          <li class="js-share">Share Interest</li>
+          <li class="js-delete {{deleteOptionClass}}">Delete</li>
+        {{else}}
+          <li class="js-leave">Leave Interest</li>
+        {{/if}}
+      </ul>
+    </div>
+    <h3>
+      <span style="margin-right: 2px;">&amp;</span><span class="js-name">{{interest}}</span>
+      {{#if isInterestOwner}}
+        <i class="icon-settings js-settings"></i>
+      {{else}}
+        <i class="icon-user-outline js-settings"></i>
+      {{/if}}
+    </h3>
+    <div class="filters">
+      <small class="muted">
+        <span id="count-all">
+          {{{totalCount}}}
+        </span>
+        {{#if linksPresent }}
+          <span id="link-filter">
+            <span class="divider">|</span>
+            <a href="#" title="Links" class="js-filter" data-filter="link">
+              <i class="icon-link"></i> <span class="count">{{linksCount}}</span>
+            </a>
+          </span>
+        {{/if}}
+        {{#if notesPresent}}
+          <span id="note-filter">
+            <span class="divider">|</span>
+            <a href="#" title="Notes" class="js-filter" data-filter="note">
+              <i class="icon-text"></i> <span class="count">{{notesCount}}</span>
+            </a>
+          </span>
+        {{/if}}
+        {{#if imagesPresent}}
+          <span id="image-filter">
+            <span class="divider">|</span>
+            <a href="#" title="Images" class="js-filter" data-filter="image">
+              <i class="icon-photo"></i> <span class="count">{{imagesCount}}</span>
+            </a>
+          </span>
+        {{/if}}
+        {{#if attachmentsPresent}}
+          <span id="attachment-filter">
+            <span class="divider">|</span>
+            <a href="#" title="Attachments" class="js-filter" data-filter="attachment">
+              <i class="icon-paper-clip"></i> <span class="count">{{attachmentsCount}}</span>
+            </a>
+          </span>
+        {{/if}}
+      </small>
+    </div>
+  </div>
+
+</div>
+
+<div class="column">
+  <div class="search">
+    <div class="icon-search"></div>
+    <input type="text" placeholder="Search in &amp;{{interest}}" class="js-search js-hashtagable" />
+    <div class="icon-cross js-clear"></div>
+    <div class="js-suggestions"></div>
+  </div>
+  <div class="toggle js-view-toggle"></div>
+</div>

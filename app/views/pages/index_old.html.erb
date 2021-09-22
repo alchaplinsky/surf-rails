@@ -1,0 +1,91 @@
+<div class="intro" id="home">
+  <div class="container row">
+    <div class="col1of2 prl">
+      <div class="intro-text">
+        <h1>Organize your ideas &amp; inspiration with <br /> <span class="highlight">Surf</span></h1>
+        <% if @download[:platform] == :mac %>
+          <div class="mbm">Available on MacOS 10.8+</div>
+        <% elsif @download[:platform] == :windows %>
+          <div class="mbm">Available on Windows 7+ (portable)</div>
+        <% else %>
+          <div class="mbm">Not Available on your OS</div>
+        <% end %>
+        <div>
+          <a href="<%= new_user_registration_path %>" class="button hollow mbm mrs">
+            Join Surf Now
+          </a>
+          <% if @download[:supported] %>
+            <a href="<%= @download[:installer] %>" class="button">
+              Download Surf v<%= @download[:version] %>
+            </a>
+          <% end %>
+        </div>
+        <br /><br />
+        <div class="scroll-hint">
+          <%= image_tag "mouse@2x.png", height: 26%>
+          Scroll to Learn More
+        </div>
+      </div>
+    </div>
+    <div class="col1of2">
+      <div class="intro-image">
+        <%= image_tag 'macbook.png' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section by-center" id="features">
+  <div class="container">
+    <h1>Start from Anything on the Web</h1>
+    <div class="mbl">Search for inspiration and ideas by surfing the web and save content by your personal interests.</div>
+    <br /><br />
+    <%= image_tag "features.png", class: 'responsive', width: 840 %>
+  </div>
+</div>
+
+<div class="section shaded by-center">
+  <div class="container row">
+    <h1>Organize and grow your knowledge base</h1>
+    <div class="mbl">Organize your content by interests and use hashtags for easier filtering and search.</div>
+    <br><br>
+    <%= image_tag "slide02.png", class: 'responsive', width: 969%>
+  </div>
+</div>
+
+<div class="section by-center" id="get-started">
+  <div class="container">
+    <h1>Get Started</h1>
+    <br />
+    <h2 class="mbm">Surf app is <span class="highlight">FREE</span></h2>
+    <div class="words mbl">Surf app is now completely free and will always have a free plan. However, at some point, Pro plan will be introduced bringing some cool features for a reasonable money. But anyway, all early adopters will get those for free!</div>
+    <br /><br /><br /><br />
+    <h2 class="mbs">Ready to get started?</h2>
+    <div class="mbl">You're just three simple steps away</div>
+    <br />
+    <div class="row adaptive mbl">
+      <div class="col1of3 by-center">
+        <%= image_tag 'facebook.png', width: 81 %>
+        <div class="mbs">1. Create your Surf account </div>
+        <%= link_to 'Sign up with Facebook', user_facebook_omniauth_authorize_path %>
+      </div>
+      <div class="col1of3 by-center">
+        <%= image_tag 'download.png', width: 81 %>
+        <div class="mbs">2. Download desktop application</div>
+        <% if @download[:supported]%>
+        <a href="<%= @download[:installer] %>" class="button mbs">
+          <i class="icon-cloud-download"></i> Get Surf App for <%= @download[:platform].capitalize%>
+        </a>
+        <% else %>
+          <h4 class="muted">for Mac or Windows</h4>
+        <% end %>
+      </div>
+      <div class="col1of3 by-center">
+        <%= image_tag 'connect.png', width: 81 %>
+        <div class="mbs">3. Connect your Surf account</div>
+        <a href="/dashboard" class=" mbs">Connect Account</a>
+      </div>
+    </div>
+    <br /><br />
+  </div>
+</div>

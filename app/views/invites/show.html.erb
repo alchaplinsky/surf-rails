@@ -1,0 +1,12 @@
+<div class="container pvl">
+  <div class="by-center">
+    <br />
+    <h2 class="mbm">You've been invited by <%= @invite.user.full_name%> to join Surf app.</h2>
+    <p class="mbl">
+      Simply click the button below to sign up with your Facebook or Google account. <br />
+      Downloand Surf app for desktop, enter your token and you're good to go!
+    </p>
+    <a href="<%= user_facebook_omniauth_authorize_path(invite: @invite.token) %>" class="button facebook mrm">Sign up with Facebook</a>
+    <a href="<%= user_google_oauth2_omniauth_authorize_path(invite: @invite.token) %>" class="button google">Sign up with Google</a>
+  </div>
+</div>

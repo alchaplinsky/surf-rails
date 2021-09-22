@@ -1,0 +1,44 @@
+.search
+  position: relative
+  float: right
+  box-sizing: border-box
+  margin-top: 8px
+  margin-right: 30px
+  max-width: 400px
+  width: 85%
+  padding-left: 10px
+  -webkit-app-region: no-drag
+  .icon-cross
+    position: absolute
+    cursor: pointer
+    display: none
+    top: 1px
+    right: 0px
+    font-size: 16px
+    color: #aaa
+    padding: 8px
+    &:hover
+      color: #777
+  .icon-search
+    position: absolute
+    top: 9px
+    left: 20px
+    color: #aaa
+  input
+    box-sizing: border-box
+    outline: none
+    width: 100%
+    font-weight: 300
+    font-size: 14px
+    padding: 7px 10px 7px 30px
+    border-radius: 2px
+    border: 1px solid #eee
+    background: #eee
+    transition: border .2s ease, background .2s ease
+    &:focus
+      background: #fff
+      border: 1px solid lighten(#157ce3, 20%)
+  .autocomplete
+    top: 34px
+    left: 6px
+    bottom: auto

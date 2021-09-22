@@ -1,0 +1,18 @@
+.alert, .notice
+  position: absolute
+  box-sizing: border-box
+  z-index: 11
+  width: 100%
+  top: -62px
+  background: #f0ad4e
+  color: #fff
+  padding: 15px
+  text-align: center
+  transition: top .3s ease
+  &.shown
+    top: 0
+  &:empty
+    display: none
+
+.notice
+  background: #5cb85c

@@ -1,0 +1,35 @@
+successMessage = '<h3>Thanks for purchase!</h3><div class="muted">You are now enjoying premium features</div>'
+errorMessage = '<h3 style="color: #e74c3c">Error</h3><div class="muted">Could not verify payment :(</div>'
+
+renderButtons = () =>
+  paypal.Buttons(
+    createOrder: (data, actions) ->
+      actions.order.create
+        purchase_units: [
+          amount:
+            value: <%= sprintf( "%0.02f", Settings.plans.premium.price) %>
+        ]
+    onApprove: (data, actions) ->
+      $('#payment-button').hide()
+      $('#payment-loading').html('<div class="lds-payment"><div></div><div></div><div></div></div>')
+      actions.order.capture().then (details) ->
+        $.ajax
+          url: '/premium/upgrade',
+          method: 'POST'
+          headers:
+            'content-type': 'application/json'
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+          data: JSON.stringify(order_id: data.orderID)
+          success: ->
+            $('#payment-loading').hide()
+            $('#payment-button').html(successMessage)
+            $('#payment-button').show()
+          error: (response) ->
+            $('#payment-loading').hide()
+            $('#payment-button').html(errorMessage)
+            $('#payment-button').show()
+
+  ).render('#payment-button')
+
+$ ->
+  renderButtons() if $('#payment-button').length

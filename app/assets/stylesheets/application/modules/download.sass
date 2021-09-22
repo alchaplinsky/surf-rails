@@ -1,0 +1,40 @@
+.download
+  margin: 100px 0
+  padding: 30px 0
+  text-align: center
+  p
+    max-width: 350px
+    margin-left: auto
+    margin-right: auto
+  .feature-image
+    position: absolute
+    max-width: 1060px
+  .feature-iphone
+    box-shadow: 0 24px 32px rgba(0,0,0,.12), 0px -2px 10px rgba(0,0,0,0.05)
+    width: 288px
+    height: 600px
+    margin: 0 auto 40px auto
+    background-image: asset-url('iphone.png')
+    background-size: cover
+    border-radius: 40px
+  .feature-description
+    padding-top: 130px
+    padding-bottom: 130px
+
+@media(max-width: 768px)
+  .col2of3, .col1of2
+    width: 100%
+    float: none
+  .download
+    .feature-description
+      padding: 40px 0 0 0
+      text-align: center
+    .feature-image
+      position: relative
+      width: 100%
+
+.icon-apple, .icon-windows, .icon-chrome
+  &.logo
+    font-size: 50px
+    margin-bottom: 30px
+    color: #a4b1c4

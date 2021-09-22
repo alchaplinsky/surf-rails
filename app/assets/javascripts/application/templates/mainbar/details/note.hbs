@@ -1,0 +1,10 @@
+<div class="field">
+  <input type="text" name="title" class="js-input title" value="{{note.title}}" placeholder="Title" {{#if readonly}}readonly{{/if}} />
+</div>
+<div class="field">
+  <textarea name="text" class="js-input" rows="20" placeholder="Text" {{#if readonly}}readonly{{/if}}>{{note.text}}</textarea>
+</div>
+<div class="field footer">
+  <div class="js-suggestions"></div>
+  <input type="text" name="tag_list" placeholder="Enter hashtags starting with #" class="hashtags js-input js-hashtagable" value="{{tags}}" {{#if readonly}}readonly{{/if}} />
+</div>

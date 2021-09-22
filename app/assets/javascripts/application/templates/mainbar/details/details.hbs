@@ -1,0 +1,16 @@
+<div class="toolbar">
+  <span class="control js-back" title="Back"><i class="icon-close"></i></span>
+  {{#if url}}
+    <a href="{{url}}" target="_blank" class="control"><i class="icon-open"></i></a>
+  {{/if}}
+  <span class="control js-share js-context-toggle" title="Share"><i class="icon-share"></i></span>
+  <span class="context-holder">
+    <ul class="context js-context">
+      <li class="js-copy">Copy link to clipboard</li>
+    </ul>
+  </span>
+  {{#unless readonly}}
+    <span class="control js-delete" title="Delete"><i class="icon-trash"></i></span>
+  {{/unless}}
+</div>
+<div class="content js-form-region"></div>

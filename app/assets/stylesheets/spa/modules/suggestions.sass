@@ -1,0 +1,35 @@
+.suggestions
+  position: absolute
+  max-height: 144px
+  padding-top: 5px
+  top: 369px
+  overflow: auto
+  z-index: 3
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    background: #fafafa
+    li
+      padding: 6px 20px 2px 20px
+      border-bottom: 1px solid #eee
+      cursor: pointer
+      .icon-plus
+        float: right
+        margin-top: 8px
+        display: none
+      &:last-child
+        border-bottom: none
+      &:hover
+        background: #157ce3
+        color: #fff
+        .muted
+          color: rgba(255,255,255,.5)
+        .icon-plus
+          display: inline
+
+@media (max-width: 768px)
+  .suggestions
+    left: 0
+    top: 407px
+    padding: 0 15px

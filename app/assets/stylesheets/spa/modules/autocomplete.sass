@@ -1,0 +1,22 @@
+.autocomplete
+  position: absolute
+  z-index: 10
+  bottom: 50px
+  left: 0
+  max-height: 230px
+  width: 97%
+  margin: 0 1%
+  background: #fff
+  overflow: scroll
+  box-shadow: 0 0 10px rgba(100,100,100,.3)
+  border: 1px solid #ccc
+  border-radius: 4px
+  &:empty
+    display: none
+  .item
+    font-weight: 600
+    padding: 8px 15px
+    cursor: pointer
+    &.current
+      background: #157ce3
+      color: #fff

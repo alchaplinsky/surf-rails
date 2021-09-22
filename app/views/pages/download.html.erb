@@ -1,0 +1,51 @@
+<div class="download">
+  <div class="container row">
+    <h1>Get Surf for Desktop</h1>
+    <p class="muted mbl">
+      Download and install Surf desktop app for MacOS or Windows. Also available Surf chrome extension.
+    </p>
+    <div class="mbs">
+      <% if @download[:supported] %>
+      <div class="mbs">
+        <a href="<%= @download[:installer] %>" class="button hvr-float-shadow">
+          Download Surf for <%= @download[:platform].capitalize %>
+        </a>
+      </div>
+      <small class="pale">Current version: v<%= @download[:version] %></small>
+      <% else %>
+      <div class="muted">Available for MacOS and Windows</div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render partial: 'downloads' %>
+<div class="download mobile">
+  <div class="container row">
+    <div class="col1of2">
+      <div class="feature-iphone">
+        &nbsp;
+      </div>
+    </div>
+    <div class="col1of2">
+      <div class="feature-description">
+        <h1 class="by-center">Start working with Surf on your phone</h1>
+        <p class="muted mbl">
+          Download and install Surf mobile app for iOS or Android.
+        </p>
+        <br /><br />
+        <div class="row mbs">
+          <div class="col1of2 prm">
+            <%= link_to 'https://itunes.apple.com/us/app/surf-interest-based-content/id1299830880?ls=1&mt=8', target: '_blank', class: 'right' do %>
+              <%= image_tag 'download_badge_ios.png', height: 60 %>
+            <% end %>
+          </div>
+          <div class="col1of2 plm">
+            <%= link_to 'https://play.google.com/store/apps/details?id=com.surf', target: '_blank' do %>
+              <%= image_tag 'download_badge_android.png', height: 60 %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

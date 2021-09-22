@@ -1,0 +1,15 @@
+<div class="authentication">
+  <h2>Log In</h2>
+  <hr>
+  <div class="buttons">
+    <a href="<%= user_facebook_omniauth_authorize_path %>" class="button facebook">Log in with Facebook</a>
+    <div class="divider">
+      <span>or</span>
+    </div>
+    <a href="<%= user_google_oauth2_omniauth_authorize_path%>" class="button google">Log in with Google</a>
+  </div>
+  <small class="muted">
+    Don't have an account?
+    <a href="<%= new_user_registration_path %>">Sign up now ›</a>
+  </small>
+</div>

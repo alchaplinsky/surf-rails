@@ -1,0 +1,44 @@
+<%
+set_meta_tags({
+  site: 'SurfApp',
+  title: @submission.title || 'Untitled',
+  description: strip_tags(@submission.text).truncate(255),
+  og: {
+    site_name: 'SurfApp',
+    title: @submission.title || 'Untitled',
+    description: strip_tags(@submission.text).truncate(255),
+    type: 'article',
+    image: image_url('icon.png'),
+    url: share_url(@submission.hashid),
+    created_time: @submission.created_at.to_i,
+    updated_time: @submission.updated_at.to_i
+  }
+})
+%>
+
+<div class="container">
+  <div class="sheet">
+    <div class="title row pbs">
+      <div class="right attribution">
+        <small class="pale"><%= @submission.created_at.strftime('%b %d, %Y') %></small><br />
+        <small class="pale">by <%= @submission.user.full_name %></small>
+      </div>
+    </div>
+    <div class="body">
+      <% if @submission.title? %>
+        <h1><%= @submission.title %></h1>
+      <% end %>
+      <%= @submission.text.html_safe %>
+    </div>
+    <div class="">
+      <span class="share-button icon-facebook"></span>
+      <span class="share-button icon-twitter" data-title="<%= @submission.title%>"></span>
+      <span class="share-button icon-google-plus"></span>
+      <span class="share-button icon-linkedin"></span>
+      <!-- <span class="share-button icon-link"></span> -->
+    </div>
+  </div>
+</div>
+<script>
+  widget = new Surf.Share('<%= share_url(@submission.hashid)%>')
+</script>
